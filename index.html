@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>MS — Вернем обуви новую жизнь</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;family=Playfair+Display:wght@600&amp;display=swap" rel="stylesheet"/>
+<!-- Favicon (minimal logo) -->
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='100%25' height='100%25' rx='12' fill='%23221f1f'/%3E%3Ctext x='50%25' y='52%25' font-size='28' font-family='Inter,Arial' font-weight='700' fill='%23d4b36a' text-anchor='middle' dominant-baseline='middle'%3EMS%3C/text%3E%3C/svg%3E" rel="icon">
+<style>
+    :root{
+      --bg1: #f8f7f5;
+      --bg2: #efedea;
+      --deep: #1a1a1a;
+      --muted: #666;
+      --accent: #c9a44c; /* gold tone */
+      --accent-dark: #a07f32;
+      --card: rgba(255,255,255,0.9);
+      --shadow: 0 10px 24px rgba(0,0,0,0.06);
+      --soft-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Arial;
+      background: linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%);
+      color:var(--deep);
+      line-height:1.4;
+      padding:20px;
+    }
+    .container{max-width:1100px;margin:0 auto;}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:18px;
+      background:rgba(255,255,255,0.7);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .logo{
+      width:64px;height:64px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#222,#333);
+      display:flex;align-items:center;justify-content:center;
+      font-family:"Playfair Display",serif;
+      font-size:26px;font-weight:600;
+      color:var(--accent);
+    }
+    .slogan{font-family:"Playfair Display",serif;font-size:18px;margin:0;color:var(--deep);}
+
+    .btn{
+      border:0;cursor:pointer;
+      padding:12px 20px;border-radius:999px;
+      font-weight:600;
+      transition:all .2s ease;
+      display:inline-flex;align-items:center;gap:10px;
+      text-decoration:none;
+    }
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+      color:#fff;
+      box-shadow:0 8px 20px rgba(201,164,76,0.25);
+    }
+    .btn-primary:hover{transform:translateY(-2px);}
+    .btn-secondary{
+      background:#fff;border:1px solid #ddd;color:var(--deep);
+    }
+
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px;}
+    .card{
+      background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--soft-shadow);
+      display:flex;gap:12px;align-items:flex-start;transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(0,0,0,0.08)}
+    .card .icon{width:48px;height:48px;border-radius:10px;background:#222;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:20px;}
+    .card h3{margin:0 0 6px;font-size:16px;font-weight:600}
+    .card p{margin:0;color:var(--muted);font-size:14px;}
+
+    .why{margin-top:28px;display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;background:rgba(255,255,255,0.6);padding:16px;border-radius:12px;box-shadow:var(--soft-shadow);}
+    .why-item{flex:1;min-width:220px;display:flex;gap:10px;align-items:center;}
+    .why-dot{width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;}
+    .why-text{font-size:14px;color:var(--deep);}
+
+    .steps{margin-top:30px;background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--soft-shadow);}
+    .steps strong{display:block;margin-bottom:10px;font-family:"Playfair Display",serif;font-size:16px;}
+    .steps ol{margin:0;padding-left:18px;color:var(--muted);}
+    .steps li{margin:8px 0;}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px;}
+
+    /* Modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:none;align-items:center;justify-content:center;z-index:60;}
+    .modal{background:#fff;border-radius:14px;padding:20px;max-width:400px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.3);transform:translateY(20px);opacity:0;transition:all .25s ease;}
+    .modal.open{transform:translateY(0);opacity:1;}
+    .modal h3{margin:0 0 12px;font-size:18px;font-family:"Playfair Display",serif;}
+    .option{padding:12px 14px;border:1px solid #ddd;border-radius:10px;margin-top:10px;cursor:pointer;transition:all .15s ease;}
+    .option:hover{background:rgba(201,164,76,0.08);}
+    .option.selected{border-color:var(--accent);box-shadow:0 0 0 2px rgba(201,164,76,0.3);}
+
+    @media(max-width:800px){.services{grid-template-columns:1fr 1fr}.why{flex-direction:column}.why-item{min-width:auto}}
+    @media(max-width:500px){.services{grid-template-columns:1fr}header{flex-direction:column;gap:10px}}
+  </style>
+</link></head>
+<body>
+<div class="container">
+<header>
+<div style="display:flex;gap:14px;align-items:center;">
+<div class="logo">MS</div>
+<p class="slogan">Вернем обуви новую жизнь</p>
+</div>
+<button class="btn btn-primary" id="orderBtn">Заказать реставрацию</button>
+</header>
+<!-- Services -->
+<section class="services">
+<article class="card"><div class="icon">👞</div><div><h3>Реставрация</h3><p>Восстановим подошву, кожу, устраним потертости и дефекты.</p></div></article>
+<article class="card"><div class="icon">🧵</div><div><h3>Пошив</h3><p>Индивидуальные вставки, замена деталей, аккуратный ремонт.</p></div></article>
+<article class="card"><div class="icon">🧴</div><div><h3>Химчистка</h3><p>Деликатная чистка кожи и текстиля, удаление пятен и запахов.</p></div></article>
+</section>
+<!-- Why choose us -->
+<section class="why">
+<div class="why-item"><div class="why-dot">★</div><div class="why-text">Отзывы клиентов</div></div>
+<div class="why-item"><div class="why-dot">👨‍🔧</div><div class="why-text">Опытный мастер</div></div>
+<div class="why-item"><div class="why-dot">📍</div><div class="why-text">Удобное расположение</div></div>
+</section>
+<!-- Steps -->
+<section class="steps">
+<strong>Как заказать:</strong>
+<ol>
+<li>Выберите услугу</li>
+<li>Курьер или самовывоз</li>
+<li>Получите обувь как новую</li>
+</ol>
+</section>
+<!-- Order Form -->
+<section id="orderForm" style="margin-top:40px; background:#fff; padding:20px; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+<h2 style="font-family:'Playfair Display',serif; margin-bottom:16px;">Оформить заказ</h2>
+<iframe frameborder="0" height="800" marginheight="0" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLSczlcRCqWil5L5O9p8DrHaD0YCjWxgzXO11gdp6UtM9kzV2kQ/viewform?embedded=true" width="100%">Загрузка...</iframe>
+</section>
+
+<footer>
+      📍 Москва, Таганская пл., 12 · 📞 <a href="tel:+79268585555" style="color:inherit;text-decoration:none;font-weight:600;">+7 926 858-55-55</a>
+</footer>
+</div>
+<!-- Modal -->
+
+<script>
+function scrollToForm(serviceName) {
+  var el = document.getElementById("orderForm");
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+// кнопка в header
+var orderBtn = document.getElementById('orderBtn');
+if (orderBtn) {
+  orderBtn.addEventListener('click', function(){ scrollToForm("Реставрация"); });
+}
+// карточки услуг
+document.querySelectorAll(".card").forEach(function(card){
+  card.style.cursor = "pointer";
+  card.addEventListener('click', function(){
+    var h3 = card.querySelector("h3");
+    var service = h3 ? h3.textContent.trim() : "Услуга";
+    scrollToForm(service);
+  });
+});
+</script>
+</body>
+</html>
