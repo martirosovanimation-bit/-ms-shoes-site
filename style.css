@@ -1,181 +1,119 @@
+/* --- Общие стили --- */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background: #fdfdfd;
+  color: #222;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Шапка --- */
 header {
-  background: #333;
-  color: #fff;
-  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav .logo {
+.logo {
   font-weight: bold;
   font-size: 20px;
+  color: #b59b47;
 }
 
-.nav .menu {
-  list-style: none;
+nav ul {
   display: flex;
+  gap: 20px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav .menu li {
-  margin-left: 15px;
-}
-
-.nav .menu a {
-  color: #fff;
-  text-decoration: none;
+nav a {
   font-size: 16px;
+  color: #000;
+  transition: color 0.3s;
 }
 
+nav a:hover {
+  color: #b59b47;
+}
+
+/* --- Кнопка-бургер --- */
 .burger {
   display: none;
   font-size: 28px;
+  background: none;
+  border: none;
   cursor: pointer;
+  color: #000;
 }
 
-/* Герой */
-.hero {
+/* --- Основные блоки --- */
+.hero, .services, .price, .reviews, .contacts, .order {
   padding: 40px 20px;
   text-align: center;
-  background: #f5f5f5;
 }
 
-.hero .btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 25px;
-  background: #c19b5f;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 18px;
+.hero h1, .services h2, .price h2, .reviews h2, .contacts h2, .order h2 {
+  margin-bottom: 15px;
 }
 
-.services, .steps, .price, .reviews, .contacts {
-  padding: 30px 20px;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  flex: 1 1 calc(33% - 20px);
-  background: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.02);
-}
-
-.card .btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #c19b5f;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.price table {
+table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.price th, .price td {
+th, td {
   border: 1px solid #ddd;
   padding: 10px;
-  text-align: left;
 }
 
+/* --- Подвал --- */
 footer {
   text-align: center;
   padding: 20px;
   background: #333;
   color: #fff;
+  margin-top: 30px;
 }
 
 footer a {
-  color: #c19b5f;
-  text-decoration: none;
-}
-
-/* Липкая панель WhatsApp */
-.mobile-bar {
-  display: none;
-}
-
-.mobile-bar a {
-  display: block;
-  color: #fff;
-  background: #25D366;
-  text-align: center;
-  padding: 14px;
-  font-size: 18px;
+  color: #b59b47;
   font-weight: bold;
-  text-decoration: none;
 }
 
 /* --- Адаптив --- */
 @media (max-width: 768px) {
-  .nav .menu {
+  nav ul {
     display: none;
     flex-direction: column;
-    background: #333;
+    background: #fff;
     position: absolute;
     top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 10px;
+    right: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 999;
   }
 
-  .nav .menu.show {
+  nav ul.active {
     display: flex;
-  }
-
-  .nav .menu li {
-    margin: 10px 0;
   }
 
   .burger {
     display: block;
-    color: #fff;
-  }
-
-  .cards {
-    flex-direction: column;
-  }
-
-  .card {
-    flex: 1 1 100%;
-  }
-
-  .hero {
-    padding: 20px 10px;
   }
 
   .hero h1 {
@@ -184,18 +122,5 @@ footer a {
 
   .hero p {
     font-size: 16px;
-  }
-
-  .hero .btn {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-
-  .mobile-bar {
-    display: block;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
   }
 }

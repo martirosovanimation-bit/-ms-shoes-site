@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MS Restor — Цены</title>
+  <title>Цены — MS Реставрация</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <nav class="nav">
-      <div class="logo">MS Restor</div>
-      <div class="burger" onclick="toggleMenu()">☰</div>
-      <ul class="menu">
-        <li><a href="index.html">Главная</a></li>
+    <div class="logo">MS Реставрация</div>
+    <button class="burger">☰</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">О нас</a></li>
         <li><a href="services.html">Услуги</a></li>
-        <li><a href="price.html">Цены</a></li>
+        <li><a href="price.html">Прайс</a></li>
         <li><a href="reviews.html">Отзывы</a></li>
         <li><a href="contacts.html">Контакты</a></li>
-        <li><a href="order.html" class="btn">Заказать</a></li>
+        <li><a href="order.html">Заказать</a></li>
       </ul>
     </nav>
   </header>
@@ -30,20 +30,21 @@
         <tr><td>Химчистка</td><td>от 500 ₽</td></tr>
         <tr><td>Реставрация</td><td>от 1000 ₽</td></tr>
         <tr><td>Покраска кожи</td><td>от 1500 ₽</td></tr>
-        <tr><td>Замена молний</td><td>от 500 ₽</td></tr>
-        <tr><td>Пошив обуви</td><td>от 10 000 ₽</td></tr>
+        <tr><td>Замена молнии</td><td>от 500 ₽</td></tr>
       </table>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 MS Restor</p>
+    <p>© 2025 Мастерская реставрации</p>
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.querySelector('.menu').classList.toggle('show');
-    }
+    const burger = document.querySelector('.burger');
+    const menu = document.querySelector('nav ul');
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
   </script>
 </body>
 </html>

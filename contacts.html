@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MS Restor — Контакты</title>
+  <title>Контакты — MS Реставрация</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <nav class="nav">
-      <div class="logo">MS Restor</div>
-      <div class="burger" onclick="toggleMenu()">☰</div>
-      <ul class="menu">
-        <li><a href="index.html">Главная</a></li>
+    <div class="logo">MS Реставрация</div>
+    <button class="burger">☰</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">О нас</a></li>
         <li><a href="services.html">Услуги</a></li>
-        <li><a href="price.html">Цены</a></li>
+        <li><a href="price.html">Прайс</a></li>
         <li><a href="reviews.html">Отзывы</a></li>
         <li><a href="contacts.html">Контакты</a></li>
-        <li><a href="order.html" class="btn">Заказать</a></li>
+        <li><a href="order.html">Заказать</a></li>
       </ul>
     </nav>
   </header>
@@ -25,21 +25,22 @@
   <main>
     <section class="contacts">
       <h2>Свяжитесь с нами</h2>
-      <p>📍 Адрес: Москва, м. Таганская, Большие Каменщики д.1, офисный центр, 3 этаж, офис 5</p>
-      <p>📞 Телефон: <a href="tel:+79296786666">+7 929 678-66-66</a></p>
-      <p>💬 WhatsApp: <a href="https://wa.me/79296786666" target="_blank">Написать</a></p>
-      <p>✉️ Email: info@ms-restor.ru</p>
+      <p>📍 Москва, м. Таганская, Большие Каменщики д.1, офисный центр, 3 этаж, офис 5</p>
+      <p>📞 <a href="tel:+79296786666">+7 929 678-66-66</a></p>
+      <p>💬 <a href="https://wa.me/79296786666">WhatsApp</a> · <a href="https://t.me/">Telegram</a></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 MS Restor</p>
+    <p>© 2025 Мастерская реставрации</p>
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.querySelector('.menu').classList.toggle('show');
-    }
+    const burger = document.querySelector('.burger');
+    const menu = document.querySelector('nav ul');
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
   </script>
 </body>
 </html>

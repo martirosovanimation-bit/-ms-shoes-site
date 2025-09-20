@@ -3,41 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MS Restor — Заказ</title>
+  <title>Заказ — MS Реставрация</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <nav class="nav">
-      <div class="logo">MS Restor</div>
-      <div class="burger" onclick="toggleMenu()">☰</div>
-      <ul class="menu">
-        <li><a href="index.html">Главная</a></li>
+    <div class="logo">MS Реставрация</div>
+    <button class="burger">☰</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">О нас</a></li>
         <li><a href="services.html">Услуги</a></li>
-        <li><a href="price.html">Цены</a></li>
+        <li><a href="price.html">Прайс</a></li>
         <li><a href="reviews.html">Отзывы</a></li>
         <li><a href="contacts.html">Контакты</a></li>
+        <li><a href="order.html">Заказать</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="order">
-      <h2>Выберите способ заказа</h2>
-      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSczlcRCqWil5L5O9p8DrHaD0YCjWxgzXO11gdp6UtM9kzV2kQ/viewform?embedded=true" target="_blank" class="btn">Заполнить форму</a></p>
-      <p><a href="https://wa.me/79296786666" target="_blank" class="btn">Написать в WhatsApp</a></p>
-      <p><a href="https://t.me/username" target="_blank" class="btn">Написать в Telegram</a></p>
+      <h2>Сделать заказ</h2>
+      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSczlcRCqWil5L5O9p8DrHaD0YCjWxgzXO11gdp6UtM9kzV2kQ/viewform?embedded=true" target="_blank">Заполнить форму</a></p>
+      <p><a href="https://wa.me/79296786666" target="_blank">Написать в WhatsApp</a></p>
+      <p><a href="https://t.me/" target="_blank">Написать в Telegram</a></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 MS Restor</p>
+    <p>© 2025 Мастерская реставрации</p>
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.querySelector('.menu').classList.toggle('show');
-    }
+    const burger = document.querySelector('.burger');
+    const menu = document.querySelector('nav ul');
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
