@@ -1,33 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <title>MS — Отзывы</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MS Restor — Отзывы</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="logo">MS Реставрация</div>
-    <nav>
-      <a href="index.html">О нас</a>
-      <a href="services.html">Услуги</a>
-      <a href="price.html">Прайс</a>
-      <a href="reviews.html">Отзывы</a>
-      <a href="contacts.html">Контакты</a>
+    <nav class="nav">
+      <div class="logo">MS Restor</div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+      <ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="price.html">Цены</a></li>
+        <li><a href="reviews.html">Отзывы</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+        <li><a href="order.html" class="btn">Заказать</a></li>
+      </ul>
     </nav>
   </header>
-  <div class="container">
-    <h1>Отзывы клиентов (254)</h1>
-    <div class="grid">
-      <div class="card"><b>Арина (17 сентября)</b><br>«Реставрация, пошив и химчистка — всё супер, обувь как новая!»</div>
-      <div class="card"><b>Алексей (17 сентября)</b><br>«Делал растяжку мужских ботинок. Очень доволен, рекомендую!»</div>
-      <div class="card"><b>Дмитрий (17 сентября)</b><br>«Всё супер, рекомендую.»</div>
-    </div>
-  </div>
+
+  <main>
+    <section class="reviews">
+      <h2>Отзывы клиентов</h2>
+      <div class="cards">
+        <div class="card"><p>«Отреставрировали сумку за 2 дня, выглядит как новая!»</p><small>— Арина</small></div>
+        <div class="card"><p>«Сапоги подшили и покрасили, качество супер!»</p><small>— Алексей</small></div>
+        <div class="card"><p>«Приятный сервис, быстро и удобно, рекомендую!»</p><small>— Дмитрий</small></div>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    📍 Москва, м. Таганская, Большие Каменщики д.1, офисный центр, 3 этаж, офис 5<br>
-    📞 <a href="tel:+79296786666">+7 929 678-66-66</a> · <a href="https://wa.me/79296786666">WhatsApp</a> · <a href="https://t.me/+79296786666">Telegram</a>
-    <p>© 2025 Мастерская реставрации</p>
+    <p>© 2025 MS Restor</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>

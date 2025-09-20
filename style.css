@@ -1,39 +1,201 @@
-/* ==== Общий стиль для сайта ==== */
-:root {
-  --bg1: #f8f7f5;
-  --bg2: #efedea;
-  --deep: #1a1a1a;
-  --muted: #666;
-  --accent: #c9a44c;
-  --accent-dark: #a07f32;
-  --card: #fff;
-  --shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
 body {
-  margin:0;
-  font-family:Inter, Arial, sans-serif;
-  background:linear-gradient(180deg,var(--bg1),var(--bg2));
-  color:var(--deep);
-  line-height:1.6;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #fdfdfd;
 }
-.container {max-width:1000px;margin:0 auto;padding:20px;}
+
 header {
-  background:#fff;padding:20px;display:flex;justify-content:space-between;align-items:center;
-  box-shadow:var(--shadow);position:sticky;top:0;z-index:10;
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.logo {font-family:"Playfair Display",serif;font-size:26px;font-weight:600;color:var(--accent);}
-nav a {margin-left:20px;text-decoration:none;color:var(--deep);font-weight:600;transition:0.3s;}
-nav a:hover {color:var(--accent-dark);}
-h1,h2 {text-align:center;font-family:"Playfair Display",serif;margin:30px 0 20px;}
-.card {background:var(--card);padding:20px;border-radius:10px;box-shadow:var(--shadow);margin:10px 0;}
-.grid {display:grid;gap:20px;}
-button, .btn {
-  background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#fff;padding:10px 18px;
-  border-radius:30px;text-decoration:none;font-weight:600;display:inline-block;transition:0.3s;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-button:hover, .btn:hover {opacity:0.9;}
-table {width:100%;border-collapse:collapse;margin-top:20px;}
-table th, table td {border:1px solid #ddd;padding:10px;text-align:left;}
-table th {background:#f4f4f4;}
-footer {margin-top:40px;text-align:center;padding:20px;background:#222;color:#fff;}
-footer a {color:#c9a44c;text-decoration:none;}
+
+.nav .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav .menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav .menu li {
+  margin-left: 15px;
+}
+
+.nav .menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.burger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Герой */
+.hero {
+  padding: 40px 20px;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #c19b5f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.services, .steps, .price, .reviews, .contacts {
+  padding: 30px 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 calc(33% - 20px);
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #c19b5f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.price table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price th, .price td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: #fff;
+}
+
+footer a {
+  color: #c19b5f;
+  text-decoration: none;
+}
+
+/* Липкая панель WhatsApp */
+.mobile-bar {
+  display: none;
+}
+
+.mobile-bar a {
+  display: block;
+  color: #fff;
+  background: #25D366;
+  text-align: center;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* --- Адаптив --- */
+@media (max-width: 768px) {
+  .nav .menu {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+  }
+
+  .nav .menu.show {
+    display: flex;
+  }
+
+  .nav .menu li {
+    margin: 10px 0;
+  }
+
+  .burger {
+    display: block;
+    color: #fff;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .hero {
+    padding: 20px 10px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .mobile-bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+}

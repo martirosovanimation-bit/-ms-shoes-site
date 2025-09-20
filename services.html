@@ -1,35 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <title>MS — Услуги</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MS Restor — Услуги</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="logo">MS Реставрация</div>
-    <nav>
-      <a href="index.html">О нас</a>
-      <a href="services.html">Услуги</a>
-      <a href="price.html">Прайс</a>
-      <a href="reviews.html">Отзывы</a>
-      <a href="contacts.html">Контакты</a>
+    <nav class="nav">
+      <div class="logo">MS Restor</div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+      <ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="price.html">Цены</a></li>
+        <li><a href="reviews.html">Отзывы</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+        <li><a href="order.html" class="btn">Заказать</a></li>
+      </ul>
     </nav>
   </header>
-  <div class="container">
-    <h1>Наши услуги</h1>
-    <div class="grid">
-      <div class="card">👟 Химчистка — от 500 ₽</div>
-      <div class="card">👜 Реставрация — от 1000 ₽</div>
-      <div class="card">🎨 Покраска кожи — от 1500 ₽</div>
-      <div class="card">🔧 Замена молний — от 800 ₽</div>
-      <div class="card">✂️ Пошив обуви — от 10 000 ₽</div>
-    </div>
-  </div>
+
+  <main>
+    <section class="services">
+      <h2>Подробные услуги</h2>
+      <div class="cards">
+        <div class="card"><h3>Реставрация обуви</h3><p>Восстановление кожи, подошвы, цвета.</p></div>
+        <div class="card"><h3>Реставрация сумок</h3><p>Ремонт кожи, замена фурнитуры.</p></div>
+        <div class="card"><h3>Химчистка</h3><p>Деликатная чистка любых материалов.</p></div>
+        <div class="card"><h3>Пошив</h3><p>Индивидуальные проекты по заказу.</p></div>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    📍 Москва, м. Таганская, Большие Каменщики д.1, офисный центр, 3 этаж, офис 5<br>
-    📞 <a href="tel:+79296786666">+7 929 678-66-66</a> · <a href="https://wa.me/79296786666">WhatsApp</a> · <a href="https://t.me/+79296786666">Telegram</a>
-    <p>© 2025 Мастерская реставрации</p>
+    <p>© 2025 MS Restor</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
