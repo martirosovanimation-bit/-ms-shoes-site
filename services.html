@@ -5,45 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Услуги — MS Реставрация</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <div class="logo">MS Реставрация</div>
     <button class="burger">☰</button>
     <nav>
-      <ul>
+      <ul class="menu">
         <li><a href="index.html">О нас</a></li>
-        <li><a href="services.html">Услуги</a></li>
+        <li><a href="services.html" class="active">Услуги</a></li>
         <li><a href="price.html">Прайс</a></li>
         <li><a href="reviews.html">Отзывы</a></li>
         <li><a href="contacts.html">Контакты</a></li>
-        <li><a href="order.html">Заказать</a></li>
+        <li><a href="order.html" class="order-btn">Заказать</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="services">
-      <h2>Наши услуги</h2>
-      <ul>
-        <li>Реставрация обуви</li>
-        <li>Реставрация сумок</li>
-        <li>Химчистка аксессуаров</li>
-        <li>Пошив на заказ</li>
-      </ul>
+      <h1>Наши услуги</h1>
+      <div class="cards">
+        <div class="card"><div class="icon">🧼</div><h3>Химчистка</h3><p>Удаление пятен и грязи. Обувь и сумки станут как новые.</p></div>
+        <div class="card"><div class="icon">🪡</div><h3>Реставрация</h3><p>Полный ремонт, восстановление формы и материалов.</p></div>
+        <div class="card"><div class="icon">🎨</div><h3>Покраска кожи</h3><p>Обновим цвет или изменим стиль. Стойкий результат.</p></div>
+        <div class="card"><div class="icon">⚡</div><h3>Замена молний</h3><p>Быстрая и надёжная замена молний.</p></div>
+        <div class="card"><div class="icon">👞</div><h3>Пошив обуви</h3><p>Эксклюзивный пошив обуви по вашим размерам и дизайну.</p></div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Мастерская реставрации</p>
-  </footer>
+  <footer><p>© 2000–2025 Мастерская реставрации</p></footer>
 
   <script>
     const burger = document.querySelector('.burger');
-    const menu = document.querySelector('nav ul');
-    burger.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
+    const menu = document.querySelector('.menu');
+    burger.addEventListener('click', () => { menu.classList.toggle('active'); });
   </script>
 </body>
 </html>

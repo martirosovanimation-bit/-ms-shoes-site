@@ -1,126 +1,195 @@
-/* --- Общие стили --- */
+/* ===== ОБЩЕЕ ===== */
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #fdfdfd;
-  color: #222;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #111;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* --- Шапка --- */
 header {
+  background: #111;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 15px 30px;
 }
 
 .logo {
-  font-weight: bold;
   font-size: 20px;
-  color: #b59b47;
+  font-weight: bold;
+  color: #d4af37;
 }
 
-nav ul {
-  display: flex;
-  gap: 20px;
+.burger {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+.menu {
   list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
 }
 
-nav a {
-  font-size: 16px;
-  color: #000;
-  transition: color 0.3s;
+.menu li {
+  margin-left: 20px;
 }
 
-nav a:hover {
-  color: #b59b47;
-}
-
-/* --- Кнопка-бургер --- */
-.burger {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #000;
-}
-
-/* --- Основные блоки --- */
-.hero, .services, .price, .reviews, .contacts, .order {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.hero h1, .services h2, .price h2, .reviews h2, .contacts h2, .order h2 {
-  margin-bottom: 15px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-
-/* --- Подвал --- */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #333;
+.menu li a {
   color: #fff;
-  margin-top: 30px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-footer a {
-  color: #b59b47;
-  font-weight: bold;
+.menu li a:hover,
+.menu li a.active {
+  color: #d4af37;
 }
 
-/* --- Адаптив --- */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f5f5f5;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+/* ===== ФУТЕР ===== */
+footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+  margin: 15px;
+}
+
+.footer-section h3 {
+  color: #d4af37;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #d4af37;
+}
+
+.footer-section p a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* ===== АДАПТИВ ===== */
 @media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    border: 1px solid #ddd;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 999;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
   .burger {
     display: block;
   }
-
-  .hero h1 {
-    font-size: 22px;
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 10px;
   }
-
-  .hero p {
-    font-size: 16px;
+  .menu.active {
+    display: flex;
+  }
+  .menu li {
+    margin: 10px 0;
   }
 }
+
+/* ===== АНИМАЦИИ ===== */
+
+/* Плавное появление */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Появление снизу */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Эффект при наведении на кнопки */
+button, .btn {
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+button:hover, .btn:hover {
+  transform: scale(1.05);
+}
+
+/* Применение анимаций */
+.hero h1, .hero p {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.card {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+.card:nth-child(5) { animation-delay: 1s; }
