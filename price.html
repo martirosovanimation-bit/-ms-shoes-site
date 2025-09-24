@@ -5,44 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Прайс — MS Реставрация</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
   <header>
     <div class="logo">MS Реставрация</div>
-    <button class="burger">☰</button>
+    <button class="burger" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
     <nav>
-      <ul class="menu">
+      <ul>
         <li><a href="index.html">О нас</a></li>
         <li><a href="services.html">Услуги</a></li>
-        <li><a href="price.html" class="active">Прайс</a></li>
+        <li><a href="price.html">Прайс</a></li>
         <li><a href="reviews.html">Отзывы</a></li>
         <li><a href="contacts.html">Контакты</a></li>
-        <li><a href="order.html" class="order-btn">Заказать</a></li>
+        <li><a href="order.html" class="btn">Заказать</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="price">
+    <section class="hero">
       <h1>Прайс-лист</h1>
-      <table class="price-table">
-        <tr><th>Услуга</th><th>Цена</th></tr>
-        <tr><td>Химчистка обуви</td><td>от 500 ₽</td></tr>
-        <tr><td>Реставрация обуви</td><td>от 1000 ₽</td></tr>
-        <tr><td>Покраска кожи</td><td>от 1500 ₽</td></tr>
-        <tr><td>Замена молний</td><td>от 1000 ₽</td></tr>
-        <tr><td>Пошив обуви</td><td>от 10 000 ₽</td></tr>
-      </table>
+      <p>Работаем с 2000 года. Доступные цены на все услуги.</p>
     </section>
+
+    <table class="price-table">
+  <tr><th>Услуга</th><th>Цена</th></tr>
+  <tr><td>Химчистка обуви</td><td>от 500 ₽</td></tr>
+  <tr><td>Реставрация обуви</td><td>от 1000 ₽</td></tr>
+  <tr><td>Покраска кожи</td><td>от 1500 ₽</td></tr>
+  <tr><td>Замена молний</td><td>от 1000 ₽</td></tr>
+  <tr><td>Пошив обуви</td><td>от 10000 ₽</td></tr>
+</table>
   </main>
 
-  <footer><p>© 2000–2025 Мастерская реставрации</p></footer>
-
-  <script>
-    const burger = document.querySelector('.burger');
-    const menu = document.querySelector('.menu');
-    burger.addEventListener('click', () => { menu.classList.toggle('active'); });
-  </script>
+  <footer class="site-footer">
+    <p>📍 Москва, м. Таганская, Большие Каменщики д.1, офис 5</p>
+    <p>📞 <a href="tel:+79296786666">+7 929 678-66-66</a> · <a href="https://wa.me/79296786666" target="_blank">WhatsApp</a> · <a href="https://t.me/" target="_blank">Telegram</a></p>
+    <p>© 2000–2025 Мастерская реставрации</p>
+  </footer>
 </body>
 </html>

@@ -5,41 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Отзывы — MS Реставрация</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
   <header>
     <div class="logo">MS Реставрация</div>
-    <button class="burger">☰</button>
+    <button class="burger" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
     <nav>
-      <ul class="menu">
+      <ul>
         <li><a href="index.html">О нас</a></li>
         <li><a href="services.html">Услуги</a></li>
         <li><a href="price.html">Прайс</a></li>
-        <li><a href="reviews.html" class="active">Отзывы</a></li>
+        <li><a href="reviews.html">Отзывы</a></li>
         <li><a href="contacts.html">Контакты</a></li>
-        <li><a href="order.html" class="order-btn">Заказать</a></li>
+        <li><a href="order.html" class="btn">Заказать</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="reviews">
+    <section class="hero">
       <h1>Отзывы клиентов</h1>
-      <div class="cards">
-        <div class="card"><p>«Отличная работа! Мои ботинки как новые.»</p><span>— Алексей</span></div>
-        <div class="card"><p>«Сумка после химчистки сияет. Спасибо!»</p><span>— Марина</span></div>
-        <div class="card"><p>«Быстро, качественно и недорого.»</p><span>— Дмитрий</span></div>
-      </div>
+      <p>Работаем с 2000 года. Что говорят о нас наши клиенты.</p>
     </section>
+
+    <div class="cards">
+  <div class="card"><p>«Отличная работа — обувь как новая!»</p><span>— Алексей</span></div>
+  <div class="card"><p>«Очень довольна результатом реставрации сумки.»</p><span>— Марина</span></div>
+  <div class="card"><p>«Лучшее соотношение цены и качества.»</p><span>— Дмитрий</span></div>
+</div>
   </main>
 
-  <footer><p>© 2000–2025 Мастерская реставрации</p></footer>
-
-  <script>
-    const burger = document.querySelector('.burger');
-    const menu = document.querySelector('.menu');
-    burger.addEventListener('click', () => { menu.classList.toggle('active'); });
-  </script>
+  <footer class="site-footer">
+    <p>📍 Москва, м. Таганская, Большие Каменщики д.1, офис 5</p>
+    <p>📞 <a href="tel:+79296786666">+7 929 678-66-66</a> · <a href="https://wa.me/79296786666" target="_blank">WhatsApp</a> · <a href="https://t.me/" target="_blank">Telegram</a></p>
+    <p>© 2000–2025 Мастерская реставрации</p>
+  </footer>
 </body>
 </html>

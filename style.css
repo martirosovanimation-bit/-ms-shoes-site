@@ -1,195 +1,189 @@
-/* ===== ОБЩЕЕ ===== */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  color: #111;
+/* === ОБЩИЕ СТИЛИ === */
+:root {
+  --accent: #d4af37;
+  --dark-bg: #111;
+  --text: #222;
+  --muted: #666;
 }
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* === HEADER === */
 header {
-  background: #111;
-  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 15px 20px;
+  background: var(--dark-bg);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
-  font-size: 20px;
   font-weight: bold;
-  color: #d4af37;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
 }
 
 .burger {
+  display: none;
   background: none;
   border: none;
   color: #fff;
   font-size: 24px;
   cursor: pointer;
-  display: none;
 }
 
-.menu {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  margin-left: 20px;
-}
-
-.menu li a {
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.menu li a:hover,
-.menu li a.active {
-  color: #d4af37;
-}
-
+/* === HERO === */
 .hero {
+  padding: 60px 20px;
   text-align: center;
-  padding: 80px 20px;
-  background: #f5f5f5;
+  background: linear-gradient(180deg, #fff, #f9f9f9);
+  animation: fadeIn 1s ease;
 }
 
 .hero h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  font-size: 18px;
+  color: var(--muted);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* ===== ФУТЕР ===== */
-footer {
-  background: #111;
-  color: #fff;
-  padding: 40px 20px;
-  font-size: 14px;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-section {
-  flex: 1 1 250px;
-  margin: 15px;
-}
-
-.footer-section h3 {
-  color: #d4af37;
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 8px;
-}
-
-.footer-section ul li a {
-  color: #ccc;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.footer-section ul li a:hover {
-  color: #d4af37;
-}
-
-.footer-section p a {
-  color: #d4af37;
-  text-decoration: none;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding: 15px;
-  border-top: 1px solid #333;
-  margin-top: 20px;
-  font-size: 13px;
-  color: #aaa;
-}
-
-/* ===== АДАПТИВ ===== */
-@media (max-width: 768px) {
-  .burger {
-    display: block;
-  }
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: #111;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 200px;
-    padding: 10px;
-  }
-  .menu.active {
-    display: flex;
-  }
-  .menu li {
-    margin: 10px 0;
-  }
-}
-
-/* ===== АНИМАЦИИ ===== */
-
-/* Плавное появление */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Появление снизу */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Эффект при наведении на кнопки */
-button, .btn {
-  transition: transform 0.2s ease, background 0.3s ease;
-}
-button:hover, .btn:hover {
-  transform: scale(1.05);
-}
-
-/* Применение анимаций */
-.hero h1, .hero p {
-  animation: fadeIn 1.2s ease forwards;
+/* === CARDS === */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
 }
 
 .card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
   opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
+  animation: fadeInUp 0.8s forwards;
 }
-.card:nth-child(1) { animation-delay: 0.2s; }
-.card:nth-child(2) { animation-delay: 0.4s; }
-.card:nth-child(3) { animation-delay: 0.6s; }
-.card:nth-child(4) { animation-delay: 0.8s; }
-.card:nth-child(5) { animation-delay: 1s; }
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card:nth-child(1){animation-delay:0.2s;}
+.card:nth-child(2){animation-delay:0.4s;}
+.card:nth-child(3){animation-delay:0.6s;}
+.card:nth-child(4){animation-delay:0.8s;}
+.card:nth-child(5){animation-delay:1s;}
+
+.card .icon {
+  font-size: 30px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+/* === PRICE TABLE === */
+.price-table {
+  width: 90%;
+  max-width: 700px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.price-table th {
+  background: var(--accent);
+  color: #fff;
+  padding: 12px;
+}
+
+.price-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+/* === FOOTER === */
+.site-footer {
+  background: var(--dark-bg);
+  color: #eee;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+/* === BUTTONS === */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #bfa034;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from {opacity:0;} to {opacity:1;}
+}
+
+@keyframes fadeInUp {
+  from {opacity:0; transform: translateY(20px);} 
+  to {opacity:1; transform: translateY(0);}
+}
+
+/* === RESPONSIVE === */
+@media(max-width:768px){
+  .burger {display:block;}
+  nav ul {display:none;flex-direction:column;position:absolute;right:20px;top:60px;background:#111;padding:10px;border-radius:8px;}
+  nav ul.active{display:flex;}
+  .hero h1{font-size:24px;}
+  .cards{padding:15px;}
+}

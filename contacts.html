@@ -5,40 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты — MS Реставрация</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
   <header>
     <div class="logo">MS Реставрация</div>
-    <button class="burger">☰</button>
+    <button class="burger" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
     <nav>
-      <ul class="menu">
+      <ul>
         <li><a href="index.html">О нас</a></li>
         <li><a href="services.html">Услуги</a></li>
         <li><a href="price.html">Прайс</a></li>
         <li><a href="reviews.html">Отзывы</a></li>
-        <li><a href="contacts.html" class="active">Контакты</a></li>
-        <li><a href="order.html" class="order-btn">Заказать</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+        <li><a href="order.html" class="btn">Заказать</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="contacts">
-      <h1>Наши контакты</h1>
-      <p>📍 Москва, м. Таганская, Большие Каменщики д.1, офисный центр, 3 этаж, офис 5</p>
-      <p>📞 Телефон: <a href="tel:+79296786666">+7 929 678-66-66</a></p>
-      <p>✉️ Почта: <a href="mailto:info@ms-restor.ru">info@ms-restor.ru</a></p>
-      <p><a href="https://wa.me/79296786666">WhatsApp</a> · <a href="https://t.me/">Telegram</a></p>
+    <section class="hero">
+      <h1>Контакты</h1>
+      <p>Работаем с 2000 года. Свяжитесь с нами удобным способом.</p>
     </section>
+
+    <div style="max-width:800px;margin:20px auto;text-align:left">
+  <p><strong>Адрес:</strong> Москва, м. Таганская, Большие Каменщики д.1, офис 5</p>
+  <p><strong>Телефон:</strong> <a href="tel:+79296786666">+7 929 678-66-66</a></p>
+  <p><strong>Email:</strong> <a href="mailto:info@ms-restor.ru">info@ms-restor.ru</a></p>
+</div>
   </main>
 
-  <footer><p>© 2000–2025 Мастерская реставрации</p></footer>
-
-  <script>
-    const burger = document.querySelector('.burger');
-    const menu = document.querySelector('.menu');
-    burger.addEventListener('click', () => { menu.classList.toggle('active'); });
-  </script>
+  <footer class="site-footer">
+    <p>📍 Москва, м. Таганская, Большие Каменщики д.1, офис 5</p>
+    <p>📞 <a href="tel:+79296786666">+7 929 678-66-66</a> · <a href="https://wa.me/79296786666" target="_blank">WhatsApp</a> · <a href="https://t.me/" target="_blank">Telegram</a></p>
+    <p>© 2000–2025 Мастерская реставрации</p>
+  </footer>
 </body>
 </html>
