@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Химчистка белых кроссовок",
+    "before": "images/case1_before.jpg",
+    "after": "images/case1_after.jpg",
+    "description": "Удалили грязь и пятна, восстановили цвет подошвы."
+  },
+  {
+    "title": "Реставрация кожаной сумки",
+    "before": "images/case2_before.jpg",
+    "after": "images/case2_after.jpg",
+    "description": "Восстановили структуру кожи, покрасили, заменили молнию."
+  }
+]

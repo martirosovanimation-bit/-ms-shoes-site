@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная — MS Реставрация</title>
+  <title>MS Реставрация — Главная</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
   <header>
-    <div class="logo">MS Реставрация</div>
-    <button class="burger" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+    <div class="logo">
+      <img src="favicon.ico" alt="MS Logo"> MS Реставрация
+    </div>
+    <button class="burger">☰</button>
     <nav>
       <ul>
-        <li><a href="index.html">О нас</a></li>
+        <li><a href="index.html" class="active">Главная</a></li>
         <li><a href="services.html">Услуги</a></li>
         <li><a href="price.html">Прайс</a></li>
         <li><a href="reviews.html">Отзывы</a></li>
         <li><a href="contacts.html">Контакты</a></li>
-        <li><a href="order.html" class="btn">Заказать</a></li>
+        <li><a href="order.html">Заказать</a></li>
       </ul>
     </nav>
   </header>
@@ -26,22 +28,30 @@
   <main>
     <section class="hero">
       <h1>Профессиональная реставрация обуви, сумок и аксессуаров</h1>
-      <p>Работаем с 2000 года. Более 254 положительных отзывов, рейтинг 5.0.</p>
+      <p>Работаем с 2000 года. Более <b>254 положительных отзывов</b>, рейтинг <b>5.0</b>.  
+         Мы возвращаем любимым вещам новую жизнь.</p>
+      <a href="services.html" class="btn">Посмотреть услуги</a>
     </section>
-
-    <div class="cards">
-  <div class="card"><div class="icon">🧼</div><h3>Химчистка</h3><p>Удаление пятен и загрязнений.</p></div>
-  <div class="card"><div class="icon">🪡</div><h3>Реставрация</h3><p>Восстановление формы и швов.</p></div>
-  <div class="card"><div class="icon">🎨</div><h3>Покраска кожи</h3><p>Обновление цвета и устранение потертостей.</p></div>
-  <div class="card"><div class="icon">⚡</div><h3>Замена молний</h3><p>Быстрая замена на обуви и сумках.</p></div>
-  <div class="card"><div class="icon">👞</div><h3>Пошив</h3><p>Индивидуальный пошив под заказ.</p></div>
-</div>
   </main>
 
-  <footer class="site-footer">
-    <p>📍 Москва, м. Таганская, Большие Каменщики д.1, офис 5</p>
-    <p>📞 <a href="tel:+79296786666">+7 929 678-66-66</a> · <a href="https://wa.me/79296786666" target="_blank">WhatsApp</a> · <a href="https://t.me/" target="_blank">Telegram</a></p>
-    <p>© 2000–2025 Мастерская реставрации</p>
+  <footer>
+    <div class="footer-info">
+      <h3>Информация</h3>
+      <ul>
+        <li><a href="about.html">О компании</a></li>
+        <li><a href="policy.html">Политика конфиденциальности</a></li>
+        <li><a href="terms.html">Пользовательское соглашение</a></li>
+      </ul>
+    </div>
+    <div class="footer-contacts">
+      <h3>Контакты</h3>
+      <p>📍 Москва, м. Таганская, Большие Каменщики д.1, офисный центр, 3 этаж, офис 5</p>
+      <p>📞 <a href="tel:+79296786666">+7 929 678-66-66</a></p>
+      <p>✉️ <a href="mailto:restorems39@gmail.com">restorems39@gmail.com</a></p>
+    </div>
+    <p class="copyright">© 2000–2025 Мастерская реставрации</p>
   </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>

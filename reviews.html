@@ -5,41 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Отзывы — MS Реставрация</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
   <header>
-    <div class="logo">MS Реставрация</div>
-    <button class="burger" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+    <div class="logo">
+      <img src="favicon.ico" alt="MS Logo"> MS Реставрация
+    </div>
+    <button class="burger">☰</button>
     <nav>
       <ul>
-        <li><a href="index.html">О нас</a></li>
+        <li><a href="index.html">Главная</a></li>
         <li><a href="services.html">Услуги</a></li>
         <li><a href="price.html">Прайс</a></li>
-        <li><a href="reviews.html">Отзывы</a></li>
+        <li><a href="reviews.html" class="active">Отзывы</a></li>
         <li><a href="contacts.html">Контакты</a></li>
-        <li><a href="order.html" class="btn">Заказать</a></li>
+        <li><a href="order.html">Заказать</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="reviews">
       <h1>Отзывы клиентов</h1>
-      <p>Работаем с 2000 года. Что говорят о нас наши клиенты.</p>
+      <div class="review">
+        <p>"Прекрасная работа! Мои ботинки выглядят как новые!"</p>
+        <span>- Анна</span>
+      </div>
+      <div class="review">
+        <p>"Очень доволен реставрацией сумки, сервис на высоте."</p>
+        <span>- Иван</span>
+      </div>
+      <div class="review">
+        <p>"Лучшее место для ухода за обувью в Москве!"</p>
+        <span>- Олег</span>
+      </div>
     </section>
-
-    <div class="cards">
-  <div class="card"><p>«Отличная работа — обувь как новая!»</p><span>— Алексей</span></div>
-  <div class="card"><p>«Очень довольна результатом реставрации сумки.»</p><span>— Марина</span></div>
-  <div class="card"><p>«Лучшее соотношение цены и качества.»</p><span>— Дмитрий</span></div>
-</div>
   </main>
 
-  <footer class="site-footer">
-    <p>📍 Москва, м. Таганская, Большие Каменщики д.1, офис 5</p>
-    <p>📞 <a href="tel:+79296786666">+7 929 678-66-66</a> · <a href="https://wa.me/79296786666" target="_blank">WhatsApp</a> · <a href="https://t.me/" target="_blank">Telegram</a></p>
-    <p>© 2000–2025 Мастерская реставрации</p>
+  <footer>
+    <div class="footer-info">
+      <h3>Информация</h3>
+      <ul>
+        <li><a href="about.html">О компании</a></li>
+        <li><a href="policy.html">Политика конфиденциальности</a></li>
+        <li><a href="terms.html">Пользовательское соглашение</a></li>
+      </ul>
+    </div>
+    <div class="footer-contacts">
+      <h3>Контакты</h3>
+      <p>📍 Москва, м. Таганская, Большие Каменщики д.1, офисный центр, 3 этаж, офис 5</p>
+      <p>📞 <a href="tel:+79296786666">+7 929 678-66-66</a></p>
+      <p>✉️ <a href="mailto:restorems39@gmail.com">restorems39@gmail.com</a></p>
+    </div>
+    <p class="copyright">© 2000–2025 Мастерская реставрации</p>
   </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
