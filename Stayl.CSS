@@ -1,0 +1,206 @@
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #ffffff, #f8f9fa);
+  background-size: 400% 400%;
+  animation: gradientFlow 20s ease infinite;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Анимация фона */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Хедер */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #c6a25d;
+}
+
+.logo img {
+  height: 50px;
+  animation: logoFloat 4s ease-in-out infinite, logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes logoGlow {
+  0% { filter: drop-shadow(0 0 3px #d4af37); }
+  100% { filter: drop-shadow(0 0 12px #c6a25d); }
+}
+
+/* Навигация */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #222;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  color: #c6a25d;
+  transform: scale(1.1);
+}
+
+/* Бургер */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #222;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav ul { display: none; flex-direction: column; background: #111; padding: 15px; border-radius: 8px; }
+  nav ul.active { display: flex; }
+  .burger { display: block; }
+  nav a { color: #fff; }
+  nav a:hover { color: #c6a25d; }
+}
+
+/* Герой-блок */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  animation: fadeInUp 1.5s ease;
+}
+
+.btn {
+  background: #c6a25d;
+  color: #fff;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(198,162,93,0.7);
+}
+
+/* Карточки */
+.service-card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(198,162,93,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: pulseGlow 4s infinite;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(198,162,93,0.6);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(198,162,93,0.15); }
+  50% { box-shadow: 0 0 25px rgba(198,162,93,0.4); }
+}
+
+/* Прайс */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-table th, .price-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.price-table tr {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideInBounce 1s forwards;
+}
+
+@keyframes slideInBounce {
+  0% { opacity: 0; transform: translateX(-40px); }
+  60% { opacity: 1; transform: translateX(10px); }
+  80% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.price-table tr:hover {
+  background: rgba(198,162,93,0.15);
+  transition: background 0.3s ease;
+}
+
+/* Анимации */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Футер */
+footer {
+  background: #111;
+  color: #ddd;
+  padding: 25px 10%;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #333;
+  animation: footerFade 2s ease-in-out;
+}
+
+footer a { color: #c6a25d; }
+footer a:hover { color: #fff; }
+
+@keyframes footerFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
